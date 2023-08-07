@@ -8,7 +8,7 @@ export default{
 </script>
 
 <template>
-    <div></div>
+    <div> </div>
     <ChildComp></ChildComp>
     <ChildComp></ChildComp>
     <ChildComp></ChildComp>
