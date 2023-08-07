@@ -1,47 +1,41 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
+<script>
+import { ref } from 'vue'
+export default{
+  name:'App', //这里建议给个名字
+  //setup 函数
+  setup(){
+    //创建响应式变量
+    const count = ref(0)
+    const obj = {
+      arr:[1,2,3,4],
+      obj:{
+        name:'小明',
+        age:18
+      }
+    }
+    const obj1 = ref(obj)
+    setTimeout( () => {
+     obj1.value.arr = [222]
+    },3000)
+    // 所有模板中的数据都需要return
+    return{
+      count,
+      obj1
+    }
+  }
+
+}
+
 </script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="大家好，是ikun" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="title"> hahha {{ count }}</div>
+  <div>{{ obj1.name }}</div>
+  <div>{{ obj1.arr }}</div>
 </template>
-
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.title{
+  color:red;
+  background-color:black;
 }
 </style>
