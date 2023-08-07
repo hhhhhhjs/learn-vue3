@@ -1,11 +1,14 @@
 <script>
 export default{
-  
+    name:'ChildCope',
     setup(){
 
     }
 }
+
+
 </script>
 <template>
-    <div>time</div>
+    <div>哈哈哈</div>
 </template>
+
